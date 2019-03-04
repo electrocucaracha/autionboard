@@ -1,0 +1,16 @@
+{
+  "name": "autionboard",
+  "version": "1.0.0",
+  "description": "Dashboard for displaying current online auctioneers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Morales",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "smoothie": "^1.35.0",
+    "socket.io": "^2.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  canvas(
+    id='users_canvas'
+    width='1500'
+    height='500'
+  )
+  div(id="users")
+  script.
+    var socket = io.connect();
+    var id = Math.floor((Math.random() * 99999) + 1);
+    socket.emit('join', {'id': id});
+
+    var chart = new SmoothieChart({
+      millisPerPixel: 200,
+      grid: {
+        fillStyle:'#f2f2f2',
+        strokeStyle:'#0b12cd',
+        millisPerLine:10000,
+        verticalSections:5
+      },
+      labels: {
+        fillStyle:'#0b12cd'
+      },
+      timestampFormatter: SmoothieChart.timeFormatter,
+      minValue: 0
+    });
+    var users_timeline = new TimeSeries();
+    chart.addTimeSeries(users_timeline, { 
+      lineWidth:4,
+      strokeStyle:'#70c09d',
+      fillStyle:'rgba(193,243,207,0.30)'
+    });
+    chart.streamTo(document.getElementById("users_canvas"), 5000);
+
+    socket.on('count', function (data) {
+      document.getElementById("users").innerHTML = data.count + ' online auctioneer(s)';
+      users_timeline.append(new Date().getTime(), data.count);
+    });

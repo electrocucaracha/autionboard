@@ -1,0 +1,12 @@
+doctype html
+html
+  head 
+    title #{title}
+    script(src="/socket.io/socket.io.js")
+    script(src="http://smoothiecharts.org/smoothie.js")
+  body
+    main
+      block header
+        header.header
+          h1 #{title}
+      block content
