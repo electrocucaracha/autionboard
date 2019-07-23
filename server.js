@@ -29,3 +29,5 @@ io.on('connection', (client) => {
 server.listen(3000, function () {
   console.log("Auction Dashboard server listening on port %d", this.address().port);
 });
+
+module.exports = app
