@@ -4,13 +4,22 @@
   "description": "Dashboard for displaying current online auctioneers",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests.spec.js",
+    "start": "npx pm2 start ecosystem.config.js"
   },
   "author": "Victor Morales",
   "dependencies": {
-    "express": "^4.16.4",
-    "pug": "^2.0.3",
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
     "smoothie": "^1.35.0",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "grunt": "^1.0.4",
+    "grunt-express-server": "^0.5.4",
+    "grunt-mocha": "^1.2.0",
+    "mocha": "^6.2.0",
+    "supertest": "^3.4.2"
   }
 }
