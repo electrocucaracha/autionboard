@@ -6,7 +6,7 @@ technologies:
 
  - [Express][1] as web framework
  - [Pug][2] as engine template
- - [Smothie][3] for charting data on realtime
+ - [Smoothie][3] for charting data on realtime
  - [Socket.io][4] for bidirectional and event-based communication
 
 [1]: http://expressjs.com/

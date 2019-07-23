@@ -1,9 +1,10 @@
-FROM node:11.10.1-slim
+FROM node:11.15.0-slim
 MAINTAINER Victor Morales <electrocucaracha@gmail.com>
 
 WORKDIR /usr/src/app
 COPY package*.json ./
 
+RUN apt update && apt-get install -y bzip2
 RUN npm install
 COPY . .
 EXPOSE 3000
