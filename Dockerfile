@@ -1,4 +1,4 @@
-FROM node:11.15.0-slim
+FROM node:13.10.1-slim
 MAINTAINER Victor Morales <electrocucaracha@gmail.com>
 
 WORKDIR /usr/src/app
